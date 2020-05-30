@@ -5,17 +5,18 @@ import { FormGroup } from '@angular/forms';
   selector: 'file',
   template: `
   <div [formGroup]="form">
-    <div *ngIf="!field.value" class="drop-container dropzone" dropZone (hovered)="toggleHover($event)"
-      (dropped)="field.onUpload($event)" [class.hovering]="isHovering">
-      <input type="file" multiple="" (change)="field.onUpload($event.target.files)">
+    <div *ngIf="!field.value">
+      <input type="file" multiple="" (change)="onFileChange($event)">
+      <p *ngFor="let file of field.files; let i = index">
+      ...{{ file.name | slice:-10 }} <a (click)="onFileRemove(index)" class="text-danger pointer">X</a>
+      </p>
     </div>
-    <div *ngIf="field.value">
-      <!-- <button type="button" class="btn btn-primary">Change</button> -->
-      <div class="card">
-        <img class="card-img-top" [src]="field.value">
-      </div>
-    </div>
-  </div>`
+  </div>`,
+  styles: [`
+  .pointer {
+    cursor: pointer;
+  }
+  `]
 })
 export class FileComponent {
 
@@ -27,7 +28,24 @@ export class FileComponent {
 
   constructor() { }
 
+  onFileChange(event) {
+    const files = event.target.files || null;
+    if (files) {
+      this.field.files = [];
+      for (let i = 0; i < files.length; i++) {
+        const elem = files[i];
+        const file = { name: elem.name, type: elem.type, size: elem.size };
+        this.field.files.push(file);
+      }
+      this.field.onUpload(this.field, files);
+    }
+  }
+
+  onFileRemove(index: number) {
+    this.field.files.splice(index, 1);
+  }
+
   ngOnChange() {
-   console.log(this.field.value);
+  //  console.log(this.field.value);
   }
 }
