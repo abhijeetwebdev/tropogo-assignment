@@ -7,19 +7,19 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ProgressbarComponent } from './components/progressbar/progressbar.component';
 
-// forms
-import { InstituteForm } from './forms/institute/institute.form';
+// modules
+import { FormsModule } from './forms/forms.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    ProgressbarComponent,
-    InstituteForm
+    ProgressbarComponent
   ],
   imports: [
     BrowserModule,
-    NgbModule
+    NgbModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
