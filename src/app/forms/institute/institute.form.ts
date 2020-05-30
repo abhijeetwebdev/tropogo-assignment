@@ -12,6 +12,15 @@ export class InstituteForm implements OnInit, OnDestroy {
   unsubcribe: any;
   fields: any[] = [
     {
+      type: 'file',
+      preview: true,
+      name: 'logo',
+      label: 'Institute Logo',
+      required: true,
+      files: [],
+      onUpload: this.onUpload.bind(this)
+    },
+    {
       type: 'text',
       name: 'name',
       label: 'Name Of the Institute',
@@ -20,6 +29,7 @@ export class InstituteForm implements OnInit, OnDestroy {
     },
     {
       type: 'file',
+      preview: false,
       name: 'brochure',
       label: 'Institute Brochure',
       required: false,
@@ -28,6 +38,7 @@ export class InstituteForm implements OnInit, OnDestroy {
     },
     {
       type: 'file',
+      preview: false,
       name: 'certifications',
       label: 'Certifications',
       required: false,
@@ -36,6 +47,7 @@ export class InstituteForm implements OnInit, OnDestroy {
     },
     {
       type: 'file',
+      preview: false,
       name: 'gallery',
       label: 'Institute/Courses Gallery',
       required: true,
