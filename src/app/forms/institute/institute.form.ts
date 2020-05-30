@@ -1,5 +1,6 @@
 import { Component, OnInit, OnDestroy, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-institute-form',
@@ -11,7 +12,7 @@ export class InstituteForm implements OnInit, OnDestroy {
   @Output() onSubmit: EventEmitter<any> = new EventEmitter<any>();
   
   form: FormGroup;
-  unsubcribe: any;
+  formSub: Subscription;
   fields: any[] = [
     {
       type: 'file',
@@ -77,7 +78,7 @@ export class InstituteForm implements OnInit, OnDestroy {
     
     this.form = new FormGroup(fieldsCtrls);
 
-    this.unsubcribe = this.form.valueChanges.subscribe((update) => {
+    this.formSub = this.form.valueChanges.subscribe((update) => {
       console.log(update);
     });
   }
@@ -88,7 +89,7 @@ export class InstituteForm implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.unsubcribe();
+    this.formSub.unsubscribe();
   }
 
   validate() {
