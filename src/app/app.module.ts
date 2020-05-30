@@ -4,11 +4,13 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { ProgressbarComponent } from './components/progressbar/progressbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent
+    NavbarComponent,
+    ProgressbarComponent
   ],
   imports: [
     BrowserModule,
