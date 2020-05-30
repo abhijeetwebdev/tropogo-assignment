@@ -4,6 +4,7 @@ import { FormsModule as NgFormsModule, ReactiveFormsModule } from '@angular/form
 
 // forms
 import { InstituteForm } from './institute/institute.form';
+// import { CourseForm } from './course/course.form';
 
 // components
 import { FieldBuilder } from './field-builder';
@@ -11,13 +12,16 @@ import { FieldBuilder } from './field-builder';
 // input fields
 import { TextBoxComponent } from './fields/textbox';
 import { FileComponent } from './fields/file';
+import { RadioComponent } from './fields/radio';
 
 @NgModule({
   declarations: [
     InstituteForm,
+    // CourseForm,
     FieldBuilder,
     TextBoxComponent,
-    FileComponent
+    FileComponent,
+    RadioComponent
   ],
   imports: [
     CommonModule,
@@ -26,6 +30,7 @@ import { FileComponent } from './fields/file';
   ],
   exports: [
     InstituteForm,
+    // CourseForm,
     FieldBuilder
   ]
 })
