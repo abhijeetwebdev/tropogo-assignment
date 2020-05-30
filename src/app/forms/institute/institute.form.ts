@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
@@ -7,6 +7,8 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
   styleUrls: ['./institute.form.scss']
 })
 export class InstituteForm implements OnInit, OnDestroy {
+
+  @Output() onSubmit: EventEmitter<any> = new EventEmitter<any>();
   
   form: FormGroup;
   unsubcribe: any;
@@ -89,12 +91,11 @@ export class InstituteForm implements OnInit, OnDestroy {
     this.unsubcribe();
   }
 
-  onSubmit() {
-    if (!this.form.valid) {
-      alert('Errors in the form');
-    } else {
-      alert('Saved!');
-    }
+  validate() {
+    // validation goes here
+    // if (this.form.valid) {
+      this.onSubmit.emit(this.form.value);
+    // }
   }
 
 }
