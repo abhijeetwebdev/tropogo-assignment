@@ -20,7 +20,7 @@ import { FormGroup } from '@angular/forms';
     cursor: pointer;
   }
   img {
-    widht: 100%;
+    width: 100%;
   }
   `]
 })
