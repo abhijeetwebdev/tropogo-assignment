@@ -10,9 +10,11 @@ import { Subscription } from 'rxjs';
 export class InstituteForm implements OnInit, OnDestroy {
 
   @Output() onSubmit: EventEmitter<any> = new EventEmitter<any>();
-  
+
   form: FormGroup;
   formSub: Subscription;
+  requiredError = false;
+  formSubmitted = false;
   fields: any[] = [
     {
       type: 'file',
@@ -75,11 +77,11 @@ export class InstituteForm implements OnInit, OnDestroy {
         fieldsCtrls[f.name] = new FormGroup(opts)
       }
     }
-    
+
     this.form = new FormGroup(fieldsCtrls);
 
     this.formSub = this.form.valueChanges.subscribe((update) => {
-      console.log(update);
+      // console.log('form update', update);
     });
   }
 
@@ -94,9 +96,44 @@ export class InstituteForm implements OnInit, OnDestroy {
 
   validate() {
     // validation goes here
-    // if (this.form.valid) {
-      this.onSubmit.emit(this.form.value);
-    // }
+    this.formSubmitted = true;
+    if (!this.fieldsValid()) {
+      this.requiredError = true;
+      return false;
+    } else {
+      this.requiredError = false;
+    }
+    this.onSubmit.emit(this.form.value);
   }
+
+  fieldsValid() {
+    for (let i = 0; i < this.fields.length; i++) {
+      const field = this.fields[i];
+      if (field && field.required === true) {
+        if (field && field.files) {
+          if (field.files.length === 0) {
+            return false;
+          }
+        } else {
+          const text = this.form.controls[field.name].value;
+          if (text === '') {
+            return false;
+          }
+        }
+      }
+    }
+    return true;
+  }
+
+  // public findInvalidControls() {
+  //   const invalid = [];
+  //   const controls = this.form.controls;
+  //   for (const name in controls) {
+  //     if (controls[name].invalid) {
+  //       invalid.push(name);
+  //     }
+  //   }
+  //   console.log('invalid', invalid);
+  // }
 
 }
