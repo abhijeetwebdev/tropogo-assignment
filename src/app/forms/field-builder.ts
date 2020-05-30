@@ -6,7 +6,7 @@ import { Component, Input, OnInit } from '@angular/core';
     <div class="form-group row" [formGroup]="form">
       <label class="col-md-3 form-control-label" [attr.for]="field.label">
         {{field.label}}
-        <strong class="text-danger" *ngIf="field.required">*</strong>
+        <strong *ngIf="!field.required">(optional)</strong>
       </label>
       <div class="col-md-9" [ngSwitch]="field.type">
         <textbox *ngSwitchCase="'text'" [field]="field" [form]="form"></textbox>
