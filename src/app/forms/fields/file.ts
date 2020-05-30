@@ -5,8 +5,11 @@ import { FormGroup } from '@angular/forms';
   selector: 'file',
   template: `
   <div [formGroup]="form">
-    <div *ngIf="!field.value">
-      <input type="file" multiple="" (change)="onFileChange($event)">
+    <div *ngIf="field.preview && base64">
+      <img [src]="base64"/>
+    </div>
+    <input type="file" multiple="" (change)="onFileChange($event)">
+    <div *ngIf="!field.preview">
       <p *ngFor="let file of field.files; let i = index">
       ...{{ file.name | slice:-10 }} <a (click)="onFileRemove(index)" class="text-danger pointer">X</a>
       </p>
@@ -16,12 +19,16 @@ import { FormGroup } from '@angular/forms';
   .pointer {
     cursor: pointer;
   }
+  img {
+    widht: 100%;
+  }
   `]
 })
 export class FileComponent {
 
   @Input() field: any = {};
   @Input() form: FormGroup;
+  base64: any;
 
   get isValid() { return this.form.controls[this.field.name].valid; }
   get isDirty() { return this.form.controls[this.field.name].dirty; }
@@ -38,6 +45,7 @@ export class FileComponent {
         this.field.files.push(file);
       }
       this.field.onUpload(this.field, files);
+      this.readURL(files);
     }
   }
 
@@ -45,7 +53,17 @@ export class FileComponent {
     this.field.files.splice(index, 1);
   }
 
+  readURL(files) {
+    if (files && files[0]) {
+      var reader = new FileReader();
+      reader.onload = (event: ProgressEvent) => {
+        this.base64 = (<FileReader>event.target).result;
+      }
+      reader.readAsDataURL(files[0]);
+    }
+  }
+
   ngOnChange() {
-  //  console.log(this.field.value);
+    //  console.log(this.field.value);
   }
 }
