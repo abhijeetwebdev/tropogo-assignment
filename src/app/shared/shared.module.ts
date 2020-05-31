@@ -7,6 +7,8 @@ import { FormsModule as NgFormsModule, ReactiveFormsModule } from '@angular/form
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ProgressbarComponent } from './components/progressbar/progressbar.component';
 import { BatchBuilder } from './components/batch-builder/batch-builder';
+import { BatchHeader } from './components/batch-builder/header/header';
+import { BatchContent } from './components/batch-builder/content/content';
 import { FieldBuilder } from './components/field-builder/field-builder';
 
 // fields
@@ -22,7 +24,9 @@ import { RadioComponent } from './components/field-builder/fields/radio';
     TextBoxComponent,
     FileComponent,
     RadioComponent,
-    BatchBuilder
+    BatchBuilder,
+    BatchHeader,
+    BatchContent
   ],
   imports: [
     CommonModule,
@@ -37,7 +41,9 @@ import { RadioComponent } from './components/field-builder/fields/radio';
     TextBoxComponent,
     FileComponent,
     RadioComponent,
-    BatchBuilder
+    BatchBuilder,
+    BatchHeader,
+    BatchContent
   ]
 })
 export class SharedModule { }
