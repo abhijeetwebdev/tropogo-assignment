@@ -1,13 +1,12 @@
 <div class="row">
-    <div class="col-3">Batch</div>
-    <div class="col-3">Start Date</div>
-    <div class="col-3">End Date</div>
-    <div class="col-3"></div>
+    <div class="col-4">Batch</div>
+    <div class="col-4">Start Date</div>
+    <div class="col-4">End Date</div>
 </div>
-<ngb-accordion [closeOthers]="true" activeIds="static-1">
+<ngb-accordion [closeOthers]="true">
     <ng-container *ngFor="let batch of batches; let i = index">
         <ngb-panel [attr.id]="batch + i">
-            <ng-template ngbPanelTitle>
+            <ng-template ngbPanelHeader let-opened="opened">
                 <batch-header
                     [batch]="batch"
                     [form]="form"
@@ -15,6 +14,7 @@
                     (onReset)="reset($event)"
                     (onDelete)="delete($event)"
                 ></batch-header>
+                <button ngbPanelToggle class="btn btn-link p-0">{{ opened ? 'Close' : 'Open' }}</button>
             </ng-template>
             <ng-template ngbPanelContent>
                 <batch-content
