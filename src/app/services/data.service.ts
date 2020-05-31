@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { City } from '../models/city.model';
+// import { Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -53,6 +54,15 @@ export class DataService {
   constructor() { }
 
   getCities(): City[] {
-    return this.cities;
+    return this.cities.map(city => {
+      return { id: Number(city.id), name: city.name }
+    });
   }
+
+  // getCities(): Observable<City[]> {
+  //   const cities = this.cities.map(city => {
+  //     return { id: Number(city.id), name: city.name }
+  //   });
+  //   return of(cities);
+  // }
 }
