@@ -24,6 +24,18 @@ export class BatchContent implements OnInit {
         required: true,
     };
 
+    weekend = {
+        type: 'radio',
+        name: 'weekend',
+        label: 'Is this a weekend course?',
+        value: '',
+        required: true,
+        options: [
+            { key: '1', label: 'Yes' },
+            { key: '0', label: 'No' }
+        ]
+    };
+
     @Input() index: any;
     @Input() batch: any;
     @Input() form: any;
