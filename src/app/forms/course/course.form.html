@@ -2,6 +2,12 @@
     <div *ngFor="let field of fields">
         <app-field-builder [showError]="formSubmitted" [field]="field" [form]="form"></app-field-builder>
     </div>
+    <div>
+        <app-batch-builder [showError]="formSubmitted" [batches]="batches" [form]="form"></app-batch-builder>
+    </div>
+    <div>
+        <button type="button" (click)="addEmptyBatch()">Add Course Date</button>
+    </div>
     <div *ngIf="requiredError">
         <p class="text-danger">Please fill the required information to proceed</p>
     </div>
