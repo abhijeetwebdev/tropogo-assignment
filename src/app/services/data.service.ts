@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { City } from '../models/city.model';
+import { Language } from '../models/language.model';
 // import { Observable, of } from 'rxjs';
 
 @Injectable({
@@ -51,6 +52,25 @@ export class DataService {
     }
   ];
 
+  public languages: Language[] = [
+    {
+      id: 1,
+      name: "English"
+    }, {
+      id: 2,
+      name: "Hindi"
+    }, {
+      id: 3,
+      name: "Marathi"
+    }, {
+      id: 4,
+      name: "Kannada"
+    }, {
+      id: 3,
+      name: "Tamil"
+    }
+  ];
+
   constructor() { }
 
   getCities(): City[] {
@@ -59,10 +79,7 @@ export class DataService {
     });
   }
 
-  // getCities(): Observable<City[]> {
-  //   const cities = this.cities.map(city => {
-  //     return { id: Number(city.id), name: city.name }
-  //   });
-  //   return of(cities);
-  // }
+  getLanguages(): Language[] {
+    return this.languages;
+  }
 }
