@@ -16,6 +16,14 @@ export class BatchContent implements OnInit {
     languages: Language[];
     selectedLanguages: Language[];
 
+    cost = {
+        type: 'text',
+        name: 'cost',
+        label: 'Course Cost (Ex GST)',
+        value: '',
+        required: true,
+    };
+
     @Input() index: any;
     @Input() batch: any;
     @Input() form: any;
