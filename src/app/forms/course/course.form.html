@@ -3,7 +3,7 @@
         <app-field-builder [showError]="formSubmitted" [field]="field" [form]="form"></app-field-builder>
     </div>
     <div>
-        <app-batch-builder [showError]="formSubmitted" [batches]="batches" [form]="form"></app-batch-builder>
+        <app-batch-builder [showError]="formSubmitted" [(batches)]="batches" [form]="form"></app-batch-builder>
     </div>
     <div>
         <button type="button" (click)="addEmptyBatch()">Add Course Date</button>

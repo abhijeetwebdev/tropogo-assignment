@@ -123,4 +123,8 @@ export class CourseForm implements OnInit, OnDestroy {
     this.batches.push(emptyBatch);
   }
 
+  onBatchesChange(batches: Batch[]) {
+    this.batches = batches;
+  }
+
 }
