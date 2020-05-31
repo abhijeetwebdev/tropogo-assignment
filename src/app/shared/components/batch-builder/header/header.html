@@ -32,7 +32,15 @@
             </div>
         </div>
     </div>
-    <div class="col-3">Options</div>
+    <div class="col-3">
+        <div ngbDropdown class="d-inline-block">
+            <button type="button" class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle></button>
+            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                <button type="button" (click)="reset(index)" ngbDropdownItem>Reset</button>
+                <button type="button" (click)="delete(index)" ngbDropdownItem>Delete</button>
+            </div>
+        </div>
+    </div>
 </div>
 
 <style>

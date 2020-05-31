@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, OnDestroy } from '@angular/core';
+import { Component, Input, OnInit, OnDestroy, Output, EventEmitter } from '@angular/core';
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -12,11 +12,21 @@ export class BatchBuilder implements OnInit, OnDestroy {
     @Input() form: any;
     batchSub: Subscription;
 
+    @Output() batchesChange = new EventEmitter<number>();
+
     constructor() { }
 
     ngOnInit() {
     }
 
     ngOnDestroy() {
+    }
+
+    reset(index: number) {
+        alert('Reset: ' + index);
+    }
+
+    delete(index: number) {
+        this.batches.splice(index, 1);
     }
 }
