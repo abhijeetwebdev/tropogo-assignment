@@ -959,6 +959,13 @@
   dependencies:
     tslib "^1.9.0"
 
+"@ng-select/ng-select@^3.0.0":
+  version "3.7.3"
+  resolved "https://registry.yarnpkg.com/@ng-select/ng-select/-/ng-select-3.7.3.tgz#317fbf94211fb2044f6ab233795cf1cbab4b44a3"
+  integrity sha512-Duw5t0b9Jup/tVEoDHLm+UhGv5RnwQ7pQorCAQc4LZR35oOZFjec8FrEGGtgVAGtwaQAYyd7PSMk3nEsWPg6AQ==
+  dependencies:
+    tslib "^1.9.0"
+
 "@ngtools/webpack@8.3.26":
   version "8.3.26"
   resolved "https://registry.yarnpkg.com/@ngtools/webpack/-/webpack-8.3.26.tgz#b534838425948fb16679d2320ca588feb08fa64a"
