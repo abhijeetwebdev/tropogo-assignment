@@ -1,0 +1,21 @@
+<div class="row">
+    <div class="col-3">Batch</div>
+    <div class="col-3">Start Date</div>
+    <div class="col-3">End Date</div>
+    <div class="col-3"></div>
+</div>
+<ngb-accordion [closeOthers]="true" activeIds="static-1">
+    <ngb-panel [attr.id]="batch + index" *ngFor="let batch of batches; let i = index">
+        <ng-template ngbPanelTitle>
+            <div class="row">
+                <div class="col-3">Batch {{ index }}</div>
+                <div class="col-3">Start Date</div>
+                <div class="col-3">End Date</div>
+                <div class="col-3">Options</div>
+            </div>
+        </ng-template>
+        <ng-template ngbPanelContent>
+            Main Content
+        </ng-template>
+    </ngb-panel>
+</ngb-accordion>
