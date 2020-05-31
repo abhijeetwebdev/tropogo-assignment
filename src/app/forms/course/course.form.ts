@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Subscription } from 'rxjs';
+import { Batch } from 'src/app/models/batch.model';
 
 @Component({
   selector: 'app-course-form',
@@ -15,6 +16,7 @@ export class CourseForm implements OnInit, OnDestroy {
   formSub: Subscription;
   requiredError = false;
   formSubmitted = false;
+  batches: Batch[] = [];
   fields: any[] = [
     {
       type: 'text',
@@ -37,7 +39,7 @@ export class CourseForm implements OnInit, OnDestroy {
     {
       type: 'text',
       name: 'name',
-      label: 'Course Name',
+      label: 'Course Details',
       value: '',
       required: true,
       multiline: true
@@ -47,6 +49,7 @@ export class CourseForm implements OnInit, OnDestroy {
   constructor() { }
 
   ngOnInit() {
+    this.addEmptyBatch();
     let fieldsCtrls = {};
 
     for (let f of this.fields) {
@@ -106,6 +109,18 @@ export class CourseForm implements OnInit, OnDestroy {
       }
     }
     return true;
+  }
+
+  addEmptyBatch() {
+    const emptyBatch: Batch = {
+      startDate: null,
+      endDate: null,
+      location: null,
+      languages: [],
+      cost: null,
+      isWeekendCourse: false
+    };
+    this.batches.push(emptyBatch);
   }
 
 }
