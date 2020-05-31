@@ -1,6 +1,42 @@
 <div class="row">
     <div class="col-3">Batch {{ index }}</div>
-    <div class="col-3">Start Date</div>
-    <div class="col-3">End Date</div>
+    <div class="col-3">
+        <div class="form-group">
+            <div class="input-group">
+                <input class="form-control"
+                    placeholder="yy-mm"
+                    name="startDate"
+                    [(ngModel)]="startDate"
+                    ngbDatepicker
+                    #startDateHandle="ngbDatepicker"
+                >
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary calendar" (click)="startDateHandle.toggle()" type="button"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-3">
+        <div class="form-group">
+            <div class="input-group">
+                <input class="form-control"
+                    placeholder="yy-mm"
+                    name="endDate"
+                    [(ngModel)]="endDate"
+                    ngbDatepicker
+                    #endDateHandle="ngbDatepicker"
+                >
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary calendar" (click)="endDateHandle.toggle()" type="button"></button>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="col-3">Options</div>
 </div>
+
+<style>
+::ng-deep .card {
+    overflow: visible !important;
+}
+</style>
