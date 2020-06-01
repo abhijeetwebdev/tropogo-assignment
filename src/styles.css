@@ -106,3 +106,17 @@ button {
 .white-bg {
     background-color: white;
 }
+.pointer {
+    cursor: pointer;
+}
+.add-course {
+    color: #28a745 !important;
+}
+.accordion-arrow {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+.options-button {
+    content: '\2807';
+}
