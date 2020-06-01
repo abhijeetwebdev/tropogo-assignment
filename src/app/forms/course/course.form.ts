@@ -20,7 +20,7 @@ export class CourseForm implements OnInit, OnDestroy {
   fields: any[] = [
     {
       type: 'text',
-      name: 'name',
+      name: 'courseName',
       label: 'Course Name',
       value: '',
       required: true,
@@ -39,7 +39,7 @@ export class CourseForm implements OnInit, OnDestroy {
     },
     {
       type: 'text',
-      name: 'name',
+      name: 'courseDetails',
       label: 'Course Details',
       value: '',
       required: true,

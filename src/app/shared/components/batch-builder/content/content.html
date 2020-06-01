@@ -44,8 +44,20 @@
             </div>
             <div class="col-6">
                 <div class="form-group">
-                    <div class="input-group">
+                    <div [formGroup]="form">
                         <!-- <app-field-builder [field]="cost" [form]="form" [showError]="showError"></app-field-builder> -->
+                        <!-- <textbox [field]="field" [form]="cost" [showError]="showError"></textbox> --> 
+                        <label
+                            class="mt-3"
+                            [class.color-danger]="showError && cost.value === '' && cost.required"
+                        >{{ cost.label }}</label>
+                        <input class="form-control"
+                            [attr.type]="cost.type"
+                            [id]="cost.name"
+                            [name]="cost.name"
+                            [formControlName]="cost.name"
+                            [placeholder]="cost.placeholder"
+                        >
                     </div>
                 </div>
             </div>
@@ -55,8 +67,27 @@
 <div class="row">
     <div class="col-3"></div>
     <div class="col-9">
-        Is this a weekend course?
-        <!-- <app-field-builder [field]="weekend" [field]="field" [form]="form" [showError]="showError"></app-field-builder> -->
+        <!-- <app-field-builder [field]="weekend" [form]="form" [showError]="showError"></app-field-builder> -->
+        <!-- <radio [field]="weekend" [form]="form" [showError]="showError"></radio> -->
+        <div [formGroup]="form">
+            <label
+                class="mt-3"
+                [class.color-danger]="showError && weekend.value === '' && weekend.required"
+            >{{ weekend.label }}</label>
+            <div class="form-check" *ngFor="let option of weekend.options">
+            <input
+                type="radio"
+                [name]="weekend.name"
+                [value]="option.key"
+                class="form-check-input"
+                [attr.id]="weekend.name + option.key"
+                [checked]="option.key === weekend.value"
+            >
+            <label class="form-check-label" [attr.for]="weekend.name + option.key">
+                {{option.label}}
+            </label>
+            </div>
+        </div>
     </div>
 </div>
 <style>
