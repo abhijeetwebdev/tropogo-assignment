@@ -13,6 +13,7 @@
                     [index]="i"
                     (onReset)="reset($event)"
                     (onDelete)="delete($event)"
+                    (onDateSelect)="setDate($event)"
                 ></batch-header>
                 <button ngbPanelToggle class="btn btn-link p-0">{{ opened ? 'Close' : 'Open' }}</button>
             </ng-template>

@@ -19,9 +19,10 @@
         <div class="form-group">
             <div class="input-group datepicker">
                 <input class="form-control"
-                    placeholder="yy-mm"
+                    placeholder="Start Date"
                     name="startDate"
-                    [(ngModel)]="startDate"
+                    (dateSelect)="onDateSet(index, 'startDate', $event)"
+                    [(ngModel)]="batch.startDate"
                     ngbDatepicker
                     #startDateHandle="ngbDatepicker"
                 >
@@ -35,9 +36,10 @@
         <div class="form-group">
             <div class="input-group datepicker">
                 <input class="form-control"
-                    placeholder="yy-mm"
+                    placeholder="End Date"
                     name="endDate"
-                    [(ngModel)]="endDate"
+                    (dateSelect)="onDateSet(index, 'endDate', $event)"
+                    [(ngModel)]="batch.endDate"
                     ngbDatepicker
                     #endDateHandle="ngbDatepicker"
                 >
