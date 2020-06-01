@@ -12,7 +12,7 @@
                 <img src="assets/ic_datepicker.png" class="calendar-icon" (click)="startDateHandle.toggle()" alt="">
                 <input class="form-control"
                     [readonly]="true"
-                    placeholder="Start Date"
+                    placeholder="MM DD"
                     name="startDate"
                     [(ngModel)]="batch.startDate"
                     ngbDatepicker
@@ -27,7 +27,7 @@
                 <img src="assets/ic_datepicker.png" class="calendar-icon" (click)="endDateHandle.toggle()" alt="">
                 <input class="form-control"
                     [readonly]="true"
-                    placeholder="End Date"
+                    placeholder="MM DD"
                     name="endDate"
                     [(ngModel)]="batch.endDate"
                     ngbDatepicker
