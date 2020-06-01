@@ -93,7 +93,7 @@ img.preview {
 button {
     padding: 5px 50px;
     text-transform: uppercase !important;
-    background-color: transparent;
+    background-color: white;
 }
 .green-button, .green-button:hover {
     background-color: #28a745;
@@ -135,7 +135,7 @@ button {
     object-fit: cover;
 }
 .full-height {
-    height: calc(100vh - 75px);
+    min-height: calc(100vh - 75px);
 }
 .left-wrap {
     background-color: white;
@@ -147,4 +147,7 @@ button {
 }
 .image-wrap img {
     width: 100%;
+}
+.mb-100 {
+    margin-bottom: 100px;
 }
