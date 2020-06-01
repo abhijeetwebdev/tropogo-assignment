@@ -8,3 +8,12 @@ export class Batch {
     cost: string;
     isWeekendCourse: boolean;
 }
+
+export const emptyBatch = {
+    startDate: null,
+    endDate: null,
+    location: null,
+    languages: [],
+    cost: null,
+    isWeekendCourse: false
+}
