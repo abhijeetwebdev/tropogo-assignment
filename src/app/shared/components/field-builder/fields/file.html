@@ -1,7 +1,7 @@
 <div [formGroup]="form">
     <div *ngIf="field.preview else notPreview">
         <label [class.color-danger]="showError && field.files.length === 0 && field.required">{{ field.label }}</label>
-        <div class="institute-logo-placeholder">
+        <div class="institute-logo-placeholder fill">
             <img class="preview" *ngIf="base64" [src]="base64"/>
         </div>
         <div class="col-sm-12 institute-logo pl-0">

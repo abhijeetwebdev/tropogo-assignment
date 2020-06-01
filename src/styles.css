@@ -125,3 +125,12 @@ button {
     width: 25px;
     height: 25px;
 }
+.fill {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden
+}
+.fill img {
+    object-fit: cover;
+}
