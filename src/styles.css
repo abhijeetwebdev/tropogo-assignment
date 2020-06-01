@@ -90,3 +90,19 @@ img.preview {
 .color-danger {
     color: #dc3545;
 }
+button {
+    padding: 5px 50px;
+    text-transform: uppercase !important;
+    background-color: transparent;
+}
+.green-button, .green-button:hover {
+    background-color: #28a745;
+    border: none;
+    color: white;
+}
+.mt-20 {
+    margin-top: 20px;
+}
+.white-bg {
+    background-color: white;
+}
