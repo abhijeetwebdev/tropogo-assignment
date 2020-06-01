@@ -10,6 +10,7 @@ export class FileComponent {
   @Input() showError: any;
   @Input() field: any = {};
   @Input() form: FormGroup;
+  @Input() index: any;
   base64: any;
 
   get isValid() { return this.form.controls[this.field.name].valid; }
