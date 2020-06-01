@@ -24,19 +24,19 @@ export class BatchBuilder implements OnInit, OnDestroy {
     ngOnDestroy() {
     }
 
-    reset(index: number) {
+    resetBatch(index: number) {
         if (this.batches[index]) {
             this.batches[index] = emptyBatch;
         }
     }
 
-    delete(index: number) {
+    deleteBatch(index: number) {
         this.batches.splice(index, 1);
     }
 
-    setDate(data: { index: number, type: string, date: NgbDateStruct }) {
+    setBatch(data: { index: number, key: any, value: any }) {
         if (this.batches[data.index]) {
-            this.batches[data.index][data.type] = data.date;
+            this.batches[data.index][data.key] = data.value;
         }
     }
 }
