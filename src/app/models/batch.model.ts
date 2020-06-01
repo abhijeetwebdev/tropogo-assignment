@@ -19,3 +19,14 @@ export const emptyBatch = {
     cost: null,
     isWeekendCourse: false
 }
+
+export const getEmptyBatch = () => {
+    const batch = new Batch();
+    batch.startDate = null;
+    batch.endDate = null;
+    batch.location = null;
+    batch.languages = null;
+    batch.isWeekendCourse = null;
+    batch.cost = null;
+    return batch;
+}

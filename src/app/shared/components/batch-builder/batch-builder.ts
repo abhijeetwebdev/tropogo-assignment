@@ -1,7 +1,7 @@
-import { Component, Input, OnInit, OnDestroy, Output, EventEmitter } from '@angular/core';
+import { Component, Input, OnInit, OnDestroy, Output, EventEmitter, ChangeDetectorRef } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
-import { Batch, emptyBatch } from 'src/app/models/batch.model';
+import { Batch, getEmptyBatch } from 'src/app/models/batch.model';
 
 @Component({
     selector: 'app-batch-builder',
@@ -14,7 +14,7 @@ export class BatchBuilder implements OnInit, OnDestroy {
     @Input() form: any;
     batchSub: Subscription;
 
-    @Output() batchesChange = new EventEmitter<number>();
+    // @Output() batchesChange = new EventEmitter<any>();
 
     constructor() { }
 
@@ -26,7 +26,7 @@ export class BatchBuilder implements OnInit, OnDestroy {
 
     resetBatch(index: number) {
         if (this.batches[index]) {
-            this.batches[index] = emptyBatch;
+            this.batches[index] = getEmptyBatch();
         }
     }
 
@@ -35,8 +35,8 @@ export class BatchBuilder implements OnInit, OnDestroy {
     }
 
     setBatch(data: { index: number, key: any, value: any }) {
-        if (this.batches[data.index]) {
-            this.batches[data.index][data.key] = data.value;
-        }
+        // if (this.batches[data.index]) {
+        //     this.batches[data.index][data.key] = data.value;
+        // }
     }
 }

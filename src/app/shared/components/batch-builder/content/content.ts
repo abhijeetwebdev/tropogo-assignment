@@ -13,9 +13,10 @@ export class BatchContent implements OnInit {
 
     @Input() index: any;
     @Input() batch: Batch;
+    // @Output() batchChange = new EventEmitter<any>();
     @Input() form: any;
 
-    @Output() onBatchUpdate: EventEmitter<any> = new EventEmitter<any>();
+    // @Output() onBatchUpdate: EventEmitter<any> = new EventEmitter<any>();
 
     cities: City[];
     languages: Language[];
@@ -49,11 +50,11 @@ export class BatchContent implements OnInit {
         this.languages = this.dataService.getLanguages();
     }
 
-    locationChanged(index: number, location: Location) {
-        this.onBatchUpdate.emit({ index: index, key: 'location', value: location });
-    }
+    // locationChanged(index: number, location: Location) {
+    //     this.onBatchUpdate.emit({ index: index, key: 'location', value: location });
+    // }
 
-    languageChanged(index: number, languages: Language[]) {
-        this.onBatchUpdate.emit({ index: index, key: 'languages', value: languages });
-    }
+    // languageChanged(index: number, languages: Language[]) {
+    //     this.onBatchUpdate.emit({ index: index, key: 'languages', value: languages });
+    // }
 }
