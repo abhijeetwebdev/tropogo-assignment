@@ -15,11 +15,12 @@
             </svg>
             <a class="add-course pointer" (click)="addEmptyBatch()"> Add Another Course Date</a>
         </div>
-      </div>
-    <div *ngIf="requiredError">
-        <p class="text-danger">Please fill the required information to proceed</p>
+        <div *ngIf="requiredError">
+            <p class="text-danger">Please fill the required information to proceed</p>
+        </div>
     </div>
     <div class="buttons-wrapper">
+        <button (click)="back()" class="mt-20">Back</button>
         <button type="submit" class="green-button mt-20">Next</button>
     </div>
 </form>

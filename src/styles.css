@@ -134,3 +134,16 @@ button {
 .fill img {
     object-fit: cover;
 }
+.full-height {
+    height: calc(100vh - 75px);
+}
+.left-wrap {
+    background-color: white;
+}
+.buttons-wrapper {
+    position: fixed;
+    bottom: 0;
+}
+.buttons-wrapper:button {
+    margin-bottom: 50px;
+}
