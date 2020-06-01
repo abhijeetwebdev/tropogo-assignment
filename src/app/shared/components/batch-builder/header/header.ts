@@ -1,5 +1,6 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
+import { Batch } from 'src/app/models/batch.model';
 
 @Component({
     selector: 'batch-header',
@@ -8,7 +9,7 @@ import { NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
 export class BatchHeader implements OnInit {
 
     @Input() index: any;
-    @Input() batch: any;
+    @Input() batch: Batch;
     @Input() form: any;
 
     @Output() onReset: EventEmitter<any> = new EventEmitter<any>();

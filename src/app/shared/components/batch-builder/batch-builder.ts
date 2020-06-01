@@ -1,7 +1,7 @@
 import { Component, Input, OnInit, OnDestroy, Output, EventEmitter } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
-import { Batch } from 'src/app/models/batch.model';
+import { Batch, emptyBatch } from 'src/app/models/batch.model';
 
 @Component({
     selector: 'app-batch-builder',
@@ -25,7 +25,9 @@ export class BatchBuilder implements OnInit, OnDestroy {
     }
 
     reset(index: number) {
-        alert('Reset: ' + index);
+        if (this.batches[index]) {
+            this.batches[index] = emptyBatch;
+        }
     }
 
     delete(index: number) {
