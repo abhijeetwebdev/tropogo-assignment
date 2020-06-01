@@ -1,3 +1,89 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@ng-select/ng-select/themes/default.theme.css";
 /* @import "~@ng-select/ng-select/themes/material.theme.css"; */
+
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,700;1,500&display=swap');
+
+body {
+    font-family: 'Cabin', sans-serif !important;
+    background-color: #f8f8f8 !important;
+}
+.main-container {
+    background-color: white;
+    padding: 20px 0;
+}
+.institute-form label {
+    font-size: 12px;
+    text-transform: uppercase;
+}
+.institute-logo {
+    padding: 5px 10px;
+    position: relative;
+    color: blue;
+    border-radius: 2px;
+    text-align: left;
+    float: left;
+    cursor: pointer;
+    font-size: 10px;
+    text-transform: uppercase;
+}
+.institute-logo img {
+    width: 100%;
+}
+.hide-file {
+    position: absolute;
+    z-index: 1000;
+    opacity: 0;
+    cursor: pointer;
+    right: 0;
+    top: 0;
+    height: 100%;
+    font-size: 24px;
+    width: 100%;
+}
+.institute-logo-placeholder {
+    width: 80px;
+    height: 80px;
+    border: 1px solid #ced4da;
+}
+.upload {
+    position: relative;
+    color: blue;
+    border-radius: 2px;
+    text-align: left;
+    float: left;
+    cursor: pointer;
+    font-size: 10px;
+    text-transform: uppercase;
+    text-align: right;
+}
+.upload svg {
+    margin-right: 4px;
+    font-size: 13px;
+}
+.has-bottom-underline {
+    border-bottom: 1px solid #e7ebef;
+}
+.file-uploaded {
+    color: #999999;
+    font-size: 12px;
+    text-transform: lowercase;
+    margin-bottom: 10px;
+    padding-bottom: 15px;
+}
+.file-uploaded svg {
+    color: red;
+    text-align: right;
+    cursor: pointer;
+}
+svg {
+    pointer-events: none;
+}
+img.del-icon {
+    height: 15px;
+    width: auto;
+    cursor: pointer;
+}
+img.preview {
+    width: 100%;
+}
