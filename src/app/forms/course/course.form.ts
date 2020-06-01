@@ -24,6 +24,7 @@ export class CourseForm implements OnInit, OnDestroy {
       label: 'Course Name',
       value: '',
       required: true,
+      placeholder: 'Add course name'
     },
     {
       type: 'radio',
@@ -42,7 +43,8 @@ export class CourseForm implements OnInit, OnDestroy {
       label: 'Course Details',
       value: '',
       required: true,
-      multiline: true
+      multiline: true,
+      placeholder: 'Add course details'
     }
   ];
 
