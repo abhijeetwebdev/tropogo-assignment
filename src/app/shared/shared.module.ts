@@ -7,15 +7,15 @@ import { FormsModule as NgFormsModule, ReactiveFormsModule } from '@angular/form
 // components
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ProgressbarComponent } from './components/progressbar/progressbar.component';
-import { BatchBuilder } from './components/batch-builder/batch-builder';
-import { BatchHeader } from './components/batch-builder/header/header';
-import { BatchContent } from './components/batch-builder/content/content';
-import { FieldBuilder } from './components/field-builder/field-builder';
+import { BatchBuilder } from './batch-builder/batch-builder';
+import { BatchHeader } from './batch-builder/header/header';
+import { BatchContent } from './batch-builder/content/content';
+import { FieldBuilder } from './field-builder/field-builder';
 
 // fields
-import { TextBoxComponent } from './components/field-builder/fields/textbox';
-import { FileComponent } from './components/field-builder/fields/file';
-import { RadioComponent } from './components/field-builder/fields/radio';
+import { TextBoxComponent } from './field-builder/fields/textbox';
+import { FileComponent } from './field-builder/fields/file';
+import { RadioComponent } from './field-builder/fields/radio';
 
 @NgModule({
   declarations: [
