@@ -5,6 +5,10 @@ import { FormGroup } from '@angular/forms';
     selector: 'radio',
     template: `
       <div [formGroup]="form">
+        <label
+          class="mt-3"
+          [class.color-danger]="showError && field.value === '' && field.required"
+        >{{ field.label }}</label>
         <div class="form-check" *ngFor="let option of field.options">
           <input
             type="radio"
