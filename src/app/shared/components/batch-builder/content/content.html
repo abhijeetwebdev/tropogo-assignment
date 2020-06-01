@@ -1,53 +1,62 @@
 <div class="row">
-    <div class="col-4"></div>
-    <div class="col-4">
-        <div class="form-group">
-            <div class="input-group">
-                <ng-select
-                    placeholder="Select Location"
-                    [items]="cities"
-                    bindLabel="name"
-                    [(ngModel)]="batch.location"
-                >
-                </ng-select>
-            </div>
-        </div>
-    </div>
-    <div class="col-4"></div>
-</div>
-<div class="row">
-    <div class="col-4"></div>
-    <div class="col-4">
-        <div class="form-group">
-            <div class="input-group">
-                <ng-select
-                    placeholder="Select Languages"
-                    [items]="languages"
-                    [multiple]="true"
-                    bindLabel="name"
-                    [closeOnSelect]="false"
-                    [(ngModel)]="batch.languages"
-                >
-                    <ng-template ng-option-tmp let-item="item" let-item$="item$" let-index="index">
-                        <input id="item-{{index}}" type="checkbox" [ngModel]="item$.selected"/> {{item.name}}
-                    </ng-template>
-                </ng-select>
-            </div>
-        </div>
-    </div>
-    <div class="col-4">
-        <div class="form-group">
-            <div class="input-group">
-                <!-- <textbox [field]="cost" [form]="form"></textbox> -->
+    <div class="col-3"></div>
+    <div class="col-9">
+        <div class="row">
+            <div class="col-6">
+                <div class="form-group">
+                    <label class="mt-3">Course Location</label>
+                    <div class="input-group">
+                        <ng-select
+                            placeholder="Select Location"
+                            [items]="cities"
+                            bindLabel="name"
+                            [(ngModel)]="batch.location"
+                        >
+                        </ng-select>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </div>
 <div class="row">
-    <div class="col-4"></div>
-    <div class="col-8">
+    <div class="col-3"></div>
+    <div class="col-9">
+        <div class="row">
+            <div class="col-6">
+                <div class="form-group">
+                    <label class="mt-3">Course Language</label>
+                    <div class="input-group">
+                        <ng-select
+                            placeholder="Select Languages"
+                            [items]="languages"
+                            [multiple]="true"
+                            bindLabel="name"
+                            [closeOnSelect]="false"
+                            [(ngModel)]="batch.languages"
+                        >
+                            <ng-template ng-option-tmp let-item="item" let-item$="item$" let-index="index">
+                                <input id="item-{{index}}" type="checkbox" [ngModel]="item$.selected"/> {{item.name}}
+                            </ng-template>
+                        </ng-select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-group">
+                    <div class="input-group">
+                        <!-- <app-field-builder [field]="cost" [form]="form" [showError]="showError"></app-field-builder> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-3"></div>
+    <div class="col-9">
         Is this a weekend course?
-        <radio [field]="weekend" [form]="form"></radio>
+        <!-- <app-field-builder [field]="weekend" [field]="field" [form]="form" [showError]="showError"></app-field-builder> -->
     </div>
 </div>
 <style>

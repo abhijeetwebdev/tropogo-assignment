@@ -21,15 +21,16 @@ export class BatchContent implements OnInit {
     cities: City[];
     languages: Language[];
 
-    cost = {
+    public cost = {
         type: 'text',
         name: 'cost',
         label: 'Course Cost (Ex GST)',
         value: '',
         required: true,
+        placeholder: 'Rs.'
     };
 
-    weekend = {
+    public weekend = {
         type: 'radio',
         name: 'weekend',
         label: 'Is this a weekend course?',
