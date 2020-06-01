@@ -21,7 +21,6 @@
                 <input class="form-control"
                     placeholder="Start Date"
                     name="startDate"
-                    (dateSelect)="onDateSet(index, 'startDate', $event)"
                     [(ngModel)]="batch.startDate"
                     ngbDatepicker
                     #startDateHandle="ngbDatepicker"
@@ -38,7 +37,6 @@
                 <input class="form-control"
                     placeholder="End Date"
                     name="endDate"
-                    (dateSelect)="onDateSet(index, 'endDate', $event)"
                     [(ngModel)]="batch.endDate"
                     ngbDatepicker
                     #endDateHandle="ngbDatepicker"

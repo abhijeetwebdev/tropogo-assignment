@@ -8,7 +8,6 @@
                     [items]="cities"
                     bindLabel="name"
                     [(ngModel)]="batch.location"
-                    (ngModelChange)="locationChanged(index, $event)"
                 >
                 </ng-select>
             </div>
@@ -28,7 +27,6 @@
                     bindLabel="name"
                     [closeOnSelect]="false"
                     [(ngModel)]="batch.languages"
-                    (ngModelChange)="languageChanged(index, $event)"
                 >
                     <ng-template ng-option-tmp let-item="item" let-item$="item$" let-index="index">
                         <input id="item-{{index}}" type="checkbox" [ngModel]="item$.selected"/> {{item.name}}

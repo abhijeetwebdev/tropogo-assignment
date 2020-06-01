@@ -13,7 +13,6 @@
                     [index]="i"
                     (onReset)="resetBatch($event)"
                     (onDelete)="deleteBatch($event)"
-                    (onDateSelect)="setBatch($event)"
                 ></batch-header>
                 <button ngbPanelToggle class="btn btn-link p-0">{{ opened ? 'Close' : 'Open' }}</button>
             </ng-template>
@@ -22,7 +21,6 @@
                     [batch]="batch"
                     [form]="form"
                     [index]="i"
-                    (onBatchUpdate)="setBatch($event)"
                 ></batch-content>
             </ng-template>
         </ngb-panel>
