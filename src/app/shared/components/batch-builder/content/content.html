@@ -2,14 +2,12 @@
     <div class="col-4"></div>
     <div class="col-4">
         <div class="form-group">
-            <div class="input-group" *ngIf="cities && cities.length > 0">
-                <!-- <p *ngFor="let city of cities">{{ city.name }}</p> -->
+            <div class="input-group">
                 <ng-select
                     placeholder="Select Location"
                     [items]="cities"
                     bindLabel="name"
-                    bindValue="id"
-                    [(ngModel)]="selectedCities"
+                    [(ngModel)]="batch.location"
                 >
                 </ng-select>
             </div>
@@ -21,16 +19,14 @@
     <div class="col-4"></div>
     <div class="col-4">
         <div class="form-group">
-            <div class="input-group" *ngIf="languages && languages.length > 0">
-                <!-- <p *ngFor="let language of languages">{{ language.name }}</p> -->
+            <div class="input-group">
                 <ng-select
                     placeholder="Select Languages"
                     [items]="languages"
                     [multiple]="true"
                     bindLabel="name"
                     [closeOnSelect]="false"
-                    bindValue="id"
-                    [(ngModel)]="selectedLanguages"
+                    [(ngModel)]="batch.languages"
                 >
                     <ng-template ng-option-tmp let-item="item" let-item$="item$" let-index="index">
                         <input id="item-{{index}}" type="checkbox" [ngModel]="item$.selected"/> {{item.name}}
@@ -42,7 +38,7 @@
     <div class="col-4">
         <div class="form-group">
             <div class="input-group">
-                <textbox [field]="cost" [form]="form"></textbox>
+                <!-- <textbox [field]="cost" [form]="form"></textbox> -->
             </div>
         </div>
     </div>

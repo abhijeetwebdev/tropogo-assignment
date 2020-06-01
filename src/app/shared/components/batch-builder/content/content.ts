@@ -3,6 +3,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { DataService } from 'src/app/services/data.service';
 import { City } from 'src/app/models/city.model';
 import { Language } from 'src/app/models/language.model';
+import { Batch } from 'src/app/models/batch.model';
 
 @Component({
     selector: 'batch-content',
@@ -10,11 +11,12 @@ import { Language } from 'src/app/models/language.model';
 })
 export class BatchContent implements OnInit {
 
-    cities: City[];
-    selectedCities: City[];
+    @Input() index: any;
+    @Input() batch: Batch;
+    @Input() form: any;
 
+    cities: City[];
     languages: Language[];
-    selectedLanguages: Language[];
 
     cost = {
         type: 'text',
@@ -35,10 +37,6 @@ export class BatchContent implements OnInit {
             { key: '0', label: 'No' }
         ]
     };
-
-    @Input() index: any;
-    @Input() batch: any;
-    @Input() form: any;
 
     constructor(
         private dataService: DataService
