@@ -22,6 +22,7 @@ import { FormGroup } from '@angular/forms';
     `
 })
 export class RadioComponent {
+    @Input() showError: any;
     @Input() field: any = {};
     @Input() form: FormGroup;
 }

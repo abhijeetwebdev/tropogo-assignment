@@ -1,9 +1,12 @@
+<h2>Add some details of your training institute</h2>
 <form (ngSubmit)="validate()" [formGroup]="form" class="form-horizontal">
     <div *ngFor="let field of fields">
         <app-field-builder [showError]="formSubmitted" [field]="field" [form]="form"></app-field-builder>
     </div>
     <div *ngIf="requiredError">
-        <p class="text-danger">Please fill the required information to proceed</p>
+        <div class="alert alert-danger my-1 p-2">
+            Please fill the required information to proceed
+        </div>
     </div>
     <button type="submit">Next</button>
 </form>

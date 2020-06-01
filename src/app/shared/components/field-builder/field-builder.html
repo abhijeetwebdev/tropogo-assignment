@@ -1,0 +1,7 @@
+<div class="form-group row" [formGroup]="form">
+    <div class="col-md-12" [ngSwitch]="field.type">
+      <textbox *ngSwitchCase="'text'" [field]="field" [form]="form" [showError]="showError"></textbox>
+      <radio *ngSwitchCase="'radio'" [field]="field" [form]="form" [showError]="showError"></radio>
+      <file *ngSwitchCase="'file'" [field]="field" [form]="form" [showError]="showError"></file>
+    </div>
+</div>

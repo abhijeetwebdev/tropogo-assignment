@@ -28,9 +28,10 @@ export class InstituteForm implements OnInit, OnDestroy {
     {
       type: 'text',
       name: 'name',
-      label: 'Name Of the Institute',
+      label: 'Name of the Institute',
       value: '',
       required: true,
+      placeholder: 'Indian Institute of Drones'
     },
     {
       type: 'file',

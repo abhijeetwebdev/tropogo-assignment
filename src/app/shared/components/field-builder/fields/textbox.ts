@@ -5,12 +5,17 @@ import { FormGroup } from '@angular/forms';
   selector: 'textbox',
   template: `
   <div [formGroup]="form">
+    <label
+      class="mt-3"
+      [class.color-danger]="showError && field.value === '' && field.required"
+    >{{ field.label }}</label>
     <input class="form-control"
       *ngIf="!field.multiline"
       [attr.type]="field.type"
       [id]="field.name"
       [name]="field.name"
       [formControlName]="field.name"
+      [placeholder]="field.placeholder"
     >
     <textarea class="form-control"
       *ngIf="field.multiline"
@@ -24,6 +29,7 @@ import { FormGroup } from '@angular/forms';
 })
 export class TextBoxComponent {
   
+  @Input() showError: any;
   @Input() field: any = {};
   @Input() form: FormGroup;
   
