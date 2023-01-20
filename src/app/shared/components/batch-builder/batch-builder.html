@@ -12,6 +12,8 @@
                     [batch]="batch"
                     [form]="form"
                     [index]="i"
+                    (onReset)="reset($event)"
+                    (onDelete)="delete($event)"
                 ></batch-header>
             </ng-template>
             <ng-template ngbPanelContent>
