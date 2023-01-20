@@ -13,6 +13,7 @@ export class BatchHeader implements OnInit {
 
     @Output() onReset: EventEmitter<any> = new EventEmitter<any>();
     @Output() onDelete: EventEmitter<any> = new EventEmitter<any>();
+    @Output() onDateSelect: EventEmitter<any> = new EventEmitter<any>();
 
     startDate: NgbDateStruct;
     endDate: NgbDateStruct;
@@ -28,5 +29,9 @@ export class BatchHeader implements OnInit {
 
     delete(index: number) {
         this.onDelete.emit(index);
+    }
+
+    onDateSet(index: number, type: string, date: NgbDateStruct) {
+        this.onDateSelect.emit({ index: index, type: type, date: date });
     }
 }
