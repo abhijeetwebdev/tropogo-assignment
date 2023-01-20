@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Subscription } from 'rxjs';
-import { Batch } from 'src/app/models/batch.model';
+import { Batch, getEmptyBatch } from 'src/app/models/batch.model';
 
 @Component({
   selector: 'app-course-form',
@@ -112,15 +112,7 @@ export class CourseForm implements OnInit, OnDestroy {
   }
 
   addEmptyBatch() {
-    const emptyBatch: Batch = {
-      startDate: null,
-      endDate: null,
-      location: null,
-      languages: [],
-      cost: null,
-      isWeekendCourse: false
-    };
-    this.batches.push(emptyBatch);
+    this.batches.push(getEmptyBatch());
   }
 
   onBatchesChange(batches: Batch[]) {
