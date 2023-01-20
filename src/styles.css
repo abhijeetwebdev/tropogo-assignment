@@ -87,3 +87,6 @@ img.del-icon {
 img.preview {
     width: 100%;
 }
+.color-danger {
+    color: #dc3545;
+}

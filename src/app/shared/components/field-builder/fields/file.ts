@@ -7,6 +7,7 @@ import { FormGroup } from '@angular/forms';
 })
 export class FileComponent {
 
+  @Input() showError: any;
   @Input() field: any = {};
   @Input() form: FormGroup;
   base64: any;
