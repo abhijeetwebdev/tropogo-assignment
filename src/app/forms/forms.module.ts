@@ -7,36 +7,24 @@ import { FormsModule as NgFormsModule, ReactiveFormsModule } from '@angular/form
 import { InstituteForm } from './institute/institute.form';
 import { CourseForm } from './course/course.form';
 
-// components
-import { FieldBuilder } from './field-builder';
-import { BatchBuilder } from './batches/batch-builder';
-
-// input fields
-import { TextBoxComponent } from './fields/textbox';
-import { FileComponent } from './fields/file';
-import { RadioComponent } from './fields/radio';
+// modules
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
     InstituteForm,
-    CourseForm,
-    FieldBuilder,
-    BatchBuilder,
-    TextBoxComponent,
-    FileComponent,
-    RadioComponent
+    CourseForm
   ],
   imports: [
     CommonModule,
     NgbModule,
     NgFormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SharedModule
   ],
   exports: [
     InstituteForm,
-    CourseForm,
-    FieldBuilder,
-    BatchBuilder
+    CourseForm
   ]
 })
 export class FormsModule { }
