@@ -8,10 +8,16 @@ import { FormGroup } from '@angular/forms';
     <div *ngIf="field.preview && base64">
       <img [src]="base64"/>
     </div>
-    <input type="file" multiple="" (change)="onFileChange($event)">
+    <input type="file"
+      multiple=""
+      (change)="onFileChange($event)"
+    >
     <div *ngIf="!field.preview">
       <p *ngFor="let file of field.files; let i = index">
-      ...{{ file.name | slice:-10 }} <a (click)="onFileRemove(index)" class="text-danger pointer">X</a>
+        ...{{ file.name | slice:-10 }} 
+        <a class="text-danger pointer"
+          (click)="onFileRemove(index)"
+        >X</a>
       </p>
     </div>
   </div>`,
