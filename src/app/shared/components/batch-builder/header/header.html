@@ -1,21 +1,12 @@
 <div class="row">
-    <div class="col-4">
+    <div class="col-3">
         <div class="row">
-            <div class="col-6">
+            <div class="col-12">
                 <p>Batch {{ index + 1 }}</p>
-            </div>
-            <div class="col-6">
-                <div ngbDropdown class="d-inline-block">
-                    <button type="button" class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Options</button>
-                    <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-                        <button type="button" (click)="reset(index)" ngbDropdownItem>Reset</button>
-                        <button type="button" (click)="delete(index)" ngbDropdownItem>Delete</button>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
-    <div class="col-4">
+    <div class="col-3">
         <div class="form-group">
             <div class="input-group datepicker">
                 <input class="form-control"
@@ -31,7 +22,7 @@
             </div>
         </div>
     </div>
-    <div class="col-4">
+    <div class="col-3">
         <div class="form-group">
             <div class="input-group datepicker">
                 <input class="form-control"
@@ -47,10 +38,30 @@
             </div>
         </div>
     </div>
+    <div class="col-3">
+        <div class="col-12">
+            <div ngbDropdown class="d-inline-block">
+                <div ngbDropdownToggle>
+                    <img src="assets/ic_chevrondropdown.png" alt="">
+                </div>
+                <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                    <button type="button" (click)="reset(index)" ngbDropdownItem>
+                        <img src="" alt="">
+                        Reset
+                    </button>
+                    <button type="button" (click)="delete(index)" ngbDropdownItem>Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 <style>
 ::ng-deep .card {
+    border: none;
     overflow: visible !important;
+}
+::ng-deep .dropdown-toggle::after {
+    display:none;
 }
 </style>
