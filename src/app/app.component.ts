@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   
-  step = 1;
+  step = 2;
   progress = {
     percentage: 0,
     institute: null,
