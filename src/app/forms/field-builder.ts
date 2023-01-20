@@ -11,6 +11,7 @@ import { Subscription } from 'rxjs';
       </label>
       <div class="col-md-9" [ngSwitch]="field.type">
         <textbox *ngSwitchCase="'text'" [field]="field" [form]="form"></textbox>
+        <radio *ngSwitchCase="'radio'" [field]="field" [form]="form"></radio>
         <file *ngSwitchCase="'file'" [field]="field" [form]="form"></file>
         <div class="alert alert-danger my-1 p-2 fadeInDown animated"
           *ngIf="showError && (field.value === '' || field.files?.length === 0) && field.required"
