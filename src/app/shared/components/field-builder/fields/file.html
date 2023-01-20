@@ -4,7 +4,7 @@
         <div class="institute-logo-placeholder">
             <img class="preview" *ngIf="base64" [src]="base64"/>
         </div>
-        <div class="col-sm-12 institute-logo">
+        <div class="col-sm-12 institute-logo pl-0">
             <a (click)="file.click()">{{ base64 ? 'Change' : 'Choose'  }} Institute Logo</a>
         </div>
         <input #file type="file" class="hide-file" (change)="onFileChange($event)">
