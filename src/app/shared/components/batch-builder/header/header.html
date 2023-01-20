@@ -9,32 +9,30 @@
     <div class="col-3">
         <div class="form-group">
             <div class="input-group datepicker">
+                <img src="assets/ic_datepicker.png" class="calendar-icon" (click)="startDate.toggle()" alt="">
                 <input class="form-control"
+                    [readonly]="true"
                     placeholder="Start Date"
                     name="startDate"
                     [(ngModel)]="batch.startDate"
                     ngbDatepicker
                     #startDateHandle="ngbDatepicker"
                 >
-                <div class="input-group-append">
-                    <button class="btn btn-outline-secondary calendar" (click)="startDateHandle.toggle()" type="button"></button>
-                </div>
             </div>
         </div>
     </div>
     <div class="col-3">
         <div class="form-group">
             <div class="input-group datepicker">
+                <img src="assets/ic_datepicker.png" class="calendar-icon" (click)="endDateHandle.toggle()" alt="">
                 <input class="form-control"
+                    [readonly]="true"
                     placeholder="End Date"
                     name="endDate"
                     [(ngModel)]="batch.endDate"
                     ngbDatepicker
                     #endDateHandle="ngbDatepicker"
                 >
-                <div class="input-group-append">
-                    <button class="btn btn-outline-secondary calendar" (click)="endDateHandle.toggle()" type="button"></button>
-                </div>
             </div>
         </div>
     </div>
