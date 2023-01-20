@@ -13,6 +13,7 @@ export class BatchContent implements OnInit {
 
     @Input() index: any;
     @Input() batch: Batch;
+    @Input() showError: any;
     // @Output() batchChange = new EventEmitter<any>();
     @Input() form: any;
 
