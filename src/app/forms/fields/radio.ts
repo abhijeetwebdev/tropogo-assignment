@@ -5,10 +5,17 @@ import { FormGroup } from '@angular/forms';
     selector: 'radio',
     template: `
       <div [formGroup]="form">
-        <div class="form-check" *ngFor="let opt of field.options">
-          <input class="form-check-input" type="radio" [value]="opt.key" >
-          <label class="form-check-label">
-            {{opt.label}}
+        <div class="form-check" *ngFor="let option of field.options">
+          <input
+            type="radio"
+            [name]="field.name"
+            [value]="option.key"
+            class="form-check-input"
+            [attr.id]="field.name + option.key"
+            [checked]="option.key === field.value"
+          >
+          <label class="form-check-label" [attr.for]="field.name + option.key">
+            {{option.label}}
           </label>
         </div>
       </div> 
