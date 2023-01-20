@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgSelectModule } from '@ng-select/ng-select';
 import { FormsModule as NgFormsModule, ReactiveFormsModule } from '@angular/forms';
 
 // components
@@ -31,6 +32,7 @@ import { RadioComponent } from './components/field-builder/fields/radio';
   imports: [
     CommonModule,
     NgbModule,
+    NgSelectModule,
     NgFormsModule,
     ReactiveFormsModule
   ],
