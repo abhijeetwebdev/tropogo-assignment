@@ -4,22 +4,20 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 // components
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './components/navbar/navbar.component';
-import { ProgressbarComponent } from './components/progressbar/progressbar.component';
 
 // modules
 import { FormsModule } from './forms/forms.module';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent,
-    ProgressbarComponent
   ],
   imports: [
     BrowserModule,
     NgbModule,
-    FormsModule
+    FormsModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
