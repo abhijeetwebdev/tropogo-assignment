@@ -3,32 +3,7 @@ import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'file',
-  template: `
-  <div [formGroup]="form">
-    <div *ngIf="field.preview && base64">
-      <img [src]="base64"/>
-    </div>
-    <input type="file"
-      multiple=""
-      (change)="onFileChange($event)"
-    >
-    <div *ngIf="!field.preview">
-      <p *ngFor="let file of field.files; let i = index">
-        ...{{ file.name | slice:-10 }} 
-        <a class="text-danger pointer"
-          (click)="onFileRemove(index)"
-        >X</a>
-      </p>
-    </div>
-  </div>`,
-  styles: [`
-  .pointer {
-    cursor: pointer;
-  }
-  img {
-    width: 100%;
-  }
-  `]
+  templateUrl: './file.html'
 })
 export class FileComponent {
 
@@ -69,9 +44,5 @@ export class FileComponent {
       }
       reader.readAsDataURL(files[0]);
     }
-  }
-
-  ngOnChange() {
-    //  console.log(this.field.value);
   }
 }
