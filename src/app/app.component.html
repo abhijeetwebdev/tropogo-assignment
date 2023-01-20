@@ -1,5 +1,5 @@
 <app-navbar></app-navbar>
-<app-progressbar></app-progressbar>
+<app-progressbar [percentage]="progress.percentage"></app-progressbar>
 
 <div class="container">
 
@@ -7,7 +7,14 @@
     <div class="col-md-6 mr-0 pr-0">
       <div class="col-md-12">
         <h2>Add some details of your training institute</h2>
-        <app-institute-form></app-institute-form>
+        <app-institute-form
+          *ngIf="step === 1"
+          (onSubmit)="formSubmit($event)"
+        ></app-institute-form>
+        <!-- <app-course-form
+          *ngIf="step === 2"
+          (onSubmit)="formSubmit($event)"
+        ></app-course-form> -->
       </div>
     </div>
     <div class="col-md-6 ml-0 pl-0">
