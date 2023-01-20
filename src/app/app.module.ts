@@ -9,6 +9,9 @@ import { AppComponent } from './app.component';
 import { FormsModule } from './forms/forms.module';
 import { SharedModule } from './shared/shared.module';
 
+// services
+import { DataService } from './services/data.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +22,7 @@ import { SharedModule } from './shared/shared.module';
     FormsModule,
     SharedModule
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,3 +1,19 @@
 <div class="row">
-    <div class="col-12">Main Content {{ index }}</div>
+    <div class="col-3"></div>
+    <div class="col-6">
+        <div class="form-group">
+            <div class="input-group" *ngIf="cities && cities.length > 0">
+                <!-- <p *ngFor="let city of cities">{{ city.name }}</p> -->
+                <ng-select
+                    placeholder="Location"
+                    [items]="cities"
+                    bindLabel="name"
+                    bindValue="id"
+                    [(ngModel)]="selectedCities"
+                >
+                </ng-select>
+            </div>
+        </div>
+    </div>
+    <div class="col-3"></div>
 </div>
