@@ -45,7 +45,9 @@ export class FileComponent {
         this.field.files.push(file);
       }
       this.field.onUpload(this.field, files);
-      this.readURL(files);
+      if (this.field.preview) {
+        this.readURL(files);
+      }
     }
   }
 
