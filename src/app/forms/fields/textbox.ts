@@ -5,9 +5,21 @@ import { FormGroup } from '@angular/forms';
   selector: 'textbox',
   template: `
   <div [formGroup]="form">
-    <input *ngIf="!field.multiline" [attr.type]="field.type" class="form-control"  [id]="field.name" [name]="field.name" [formControlName]="field.name">
-    <textarea *ngIf="field.multiline" [class.is-invalid]="isDirty && !isValid" [formControlName]="field.name" [id]="field.name"
-    rows="9" class="form-control" [placeholder]="field.placeholder"></textarea>
+    <input class="form-control"
+      *ngIf="!field.multiline"
+      [attr.type]="field.type"
+      [id]="field.name"
+      [name]="field.name"
+      [formControlName]="field.name"
+    >
+    <textarea class="form-control"
+      *ngIf="field.multiline"
+      [class.is-invalid]="isDirty && !isValid"
+      [formControlName]="field.name"
+      [id]="field.name"
+      rows="9"
+      [placeholder]="field.placeholder"
+    ></textarea>
   </div>`
 })
 export class TextBoxComponent {
