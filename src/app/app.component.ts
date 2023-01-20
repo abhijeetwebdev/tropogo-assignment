@@ -24,5 +24,9 @@ export class AppComponent {
     this.progress.percentage += 25;
     this.step++;
   }
+
+  goBack() {
+    this.step = 1;
+  }
   
 }

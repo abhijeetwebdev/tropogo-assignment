@@ -11,6 +11,7 @@ import { Batch, getEmptyBatch } from 'src/app/models/batch.model';
 export class CourseForm implements OnInit, OnDestroy {
 
   @Output() onSubmit: EventEmitter<any> = new EventEmitter<any>();
+  @Output() goBack: EventEmitter<any> = new EventEmitter<any>();
 
   form: FormGroup;
   formSub: Subscription;
@@ -119,6 +120,10 @@ export class CourseForm implements OnInit, OnDestroy {
 
   onBatchesChange(batches: Batch[]) {
     this.batches = batches;
+  }
+
+  back() {
+    this.goBack.emit();
   }
 
 }
