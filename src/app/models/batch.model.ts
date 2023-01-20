@@ -1,10 +1,12 @@
 import { NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
+import { City } from './city.model';
+import { Language } from './language.model';
 
 export class Batch {
     startDate: NgbDateStruct;
     endDate: NgbDateStruct;
-    location: string;
-    languages: string[];
+    location: City;
+    languages: Language[];
     cost: string;
     isWeekendCourse: boolean;
 }
