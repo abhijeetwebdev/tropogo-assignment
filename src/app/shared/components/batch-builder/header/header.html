@@ -1,8 +1,23 @@
 <div class="row">
-    <div class="col-3">Batch {{ index + 1 }}</div>
-    <div class="col-3">
+    <div class="col-4">
+        <div class="row">
+            <div class="col-6">
+                <p>Batch {{ index + 1 }}</p>
+            </div>
+            <div class="col-6">
+                <div ngbDropdown class="d-inline-block">
+                    <button type="button" class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Options</button>
+                    <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                        <button type="button" (click)="reset(index)" ngbDropdownItem>Reset</button>
+                        <button type="button" (click)="delete(index)" ngbDropdownItem>Delete</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-4">
         <div class="form-group">
-            <div class="input-group">
+            <div class="input-group datepicker">
                 <input class="form-control"
                     placeholder="yy-mm"
                     name="startDate"
@@ -16,9 +31,9 @@
             </div>
         </div>
     </div>
-    <div class="col-3">
+    <div class="col-4">
         <div class="form-group">
-            <div class="input-group">
+            <div class="input-group datepicker">
                 <input class="form-control"
                     placeholder="yy-mm"
                     name="endDate"
@@ -29,15 +44,6 @@
                 <div class="input-group-append">
                     <button class="btn btn-outline-secondary calendar" (click)="endDateHandle.toggle()" type="button"></button>
                 </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-3">
-        <div ngbDropdown class="d-inline-block">
-            <button type="button" class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle></button>
-            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-                <button type="button" (click)="reset(index)" ngbDropdownItem>Reset</button>
-                <button type="button" (click)="delete(index)" ngbDropdownItem>Delete</button>
             </div>
         </div>
     </div>
